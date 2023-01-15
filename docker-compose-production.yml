@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  server:
+    image: liyanginsyd/sample-laravel-project-1-server
+    ports:
+      - '80:80'
+    depends_on:
+      - php
+      - mysql
+  php:
+    image: liyanginsyd/sample-laravel-project-1-php
+  mysql:
+    image: mysql:5.7
+    environment:
+      - MYSQL_DATABASE=demo
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=root
+      - MYSQL_ROOT_PASSWORD=root
+  
